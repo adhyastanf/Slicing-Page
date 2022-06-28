@@ -12,7 +12,7 @@
       <header class="2xl:px-[80px] px-0 mx-8">
         <nav class="py-6 flex justify-between">
           <div class="2xl:flex inline items-center">
-            <svg width="128" height="32" viewBox="0 0 128 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="mr-[32px]" width="128" height="32" viewBox="0 0 128 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.657532 32H11.5068C16.6514 32 20.8219 27.8295 20.8219 22.6849H9.9726C4.82803 22.6849 0.657532 26.8554 0.657532 32Z" fill="#F22BB2" />
               <path d="M1.14288 9.31507V23.0137C6.28745 23.0137 10.458 18.8432 10.458 13.6986V0C5.31338 0 1.14288 4.1705 1.14288 9.31507Z" fill="#8C30F5" />
               <path d="M31.3425 0H20.4932C15.3486 0 11.1781 4.1705 11.1781 9.31507H22.0274C27.172 9.31507 31.3425 5.14457 31.3425 0Z" fill="#FE9A22" />
@@ -39,11 +39,12 @@
               <path d="M123.168 4.80005H120.078V5.59205H121.206V9.00005H122.034V5.59205H123.168V4.80005Z" fill="black" />
               <path d="M127.74 4.80005H126.888L125.688 6.78605L124.482 4.80005H123.63V9.00005H124.458V6.28205L125.64 8.22605H125.736L126.918 6.27605V9.00005H127.74V4.80005Z" fill="black" />
             </svg>
-            <ul class="2xl:flex block">
-              <li class="mr-[32px]">Features</li>
-              <li class="mr-[32px]">Pricing</li>
-              <li class="mr-[32px]">Carrers</li>
-              <li class="mr-[32px]">Help</li>
+            <ul class="2xl:flex hidden 2xl:static absolute left-0 right-0 2xl:mt-0 mt-[10px] text-center" id="listMenu">
+            <!-- <ul class="bg-red-500 absolute mt-[8px]"> -->
+              <li class="2xl:mr-[32px] mr-0 2xl:mt-0 mt-2 border-b-2 border-black 2xl:border-b-0">Features</li>
+              <li class="2xl:mr-[32px] mr-0 2xl:mt-0 mt-2 border-b-2 border-black 2xl:border-b-0">Pricing</li>
+              <li class="2xl:mr-[32px] mr-0 2xl:mt-0 mt-2 border-b-2 border-black 2xl:border-b-0">Carrers</li>
+              <li class="2xl:mr-[32px] mr-0 2xl:mt-0 mt-2 border-b-2 border-black 2xl:border-b-0">Help</li>
             </ul>
           </div>
           <span>
@@ -239,7 +240,9 @@
               </linearGradient>
             </defs>
             </svg>
-            <img src="assets/MenuIcon.svg" alt="" class="2xl:hidden inline">
+            <button id="menu">
+              <img src="assets/MenuIcon.svg" alt="" class="2xl:hidden inline">
+            </button>
           </span>
         </nav>
         <div class="xl:flex justify-between">
@@ -952,5 +955,14 @@
         </div>
       </div>
     </footer>
+    <script>
+      const listMenu = document.getElementById("listMenu")
+      const menu = document.getElementById("menu")
+      let listClass = listMenu.classList
+      console.log(listClass)
+      menu.onclick = () => {
+        listClass.toggle("hidden")
+      }
+    </script>
   </body>
 </html>
